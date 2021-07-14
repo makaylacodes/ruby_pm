@@ -22,27 +22,14 @@
       </ul>
     </div>
   <% end %>
-<table>
-<tr>
-  <div class="form-group">
-   <td> <%= f.label :name %>
-    <th><%= f.text_field :name %></th> </td>
-  </div>
-  <div class="form-group">
-    <td><%= f.label :description %>
-    <th><%= f.text_area :description %></th></td>
-  </div>
-  <div class="form-group">
-    <td><%= f.label :status %>
-    <th><%= f.select :status, Task::STATUS_OPTIONS %></th></td>
-   </div>
 
-   </tr>
-   </table>
-  
-  <div class="form-group">
+  <div class="input-group">
+    <%= f.text_field :name, class: 'form-control', placeholder: "Enter task name" %>
+    <div class = "input-group-append">
+
     <%= f.submit class: 'btn btn-primary' %>
-  </div>
+    </div>
+    </div> 
 <% end %>
 
   

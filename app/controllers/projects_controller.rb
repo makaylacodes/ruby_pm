@@ -11,7 +11,7 @@ class ProjectsController < ApplicationController
   def show
   end
 
-  # GET /projects/new
+  #  GET /projects/new
   def new
     @project = Project.new
   end

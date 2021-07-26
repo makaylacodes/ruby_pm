@@ -1,5 +1,5 @@
 class TasksController < ApplicationController
-  before_action:authenticate_user!
+  before_action :authenticate_user!
   before_action :set_project
   before_action :set_task, only: [:show, :edit, :update, :destroy]
 
@@ -34,7 +34,7 @@ class TasksController < ApplicationController
 
   # PUT projects/1/tasks/1
   def update
-    if @task.update_attributes(task_params)
+    if @task.update(task_params)
       redirect_to(@task.project)
     else
       render action: 'edit'

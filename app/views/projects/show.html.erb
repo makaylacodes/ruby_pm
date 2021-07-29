@@ -1,15 +1,13 @@
 
-<%= button_to "Logout", destroy_user_session_path, method: :delete  %>
-<%= link_to 'Back', projects_path, class: 'btn btn-light mb-3' %>
+<%= link_to 'Back', projects_path, class: 'btn btn-light mb-6' %>
 
 <div class = "card">
   <div class = "card-body">
   <h2 class = 'card-title d-flex justify-content-between mb-4'>
   <span> <%= @project.name %> </span>
   <div>
-  <%= link_to 'Edit', edit_project_path(@project), class: 'btn btn-primary btn-sm' %>
-  <%= link_to 'Destroy', @project, method: :delete, class: 'btn btn-danger btn-sm', data: { confirm: 'Are you sure?' } %>
-      </div>
+  <%= link_to 'Edit', edit_project_path(@project), class: 'btn btn-light' %> 
+  <%= link_to 'Destroy', @project, method: :delete, class: 'btn btn-danger', data:  {confirm: 'Are you sure?'} %>
   </div>
 </h2> 
 
@@ -45,27 +43,23 @@
 <h4>Tasks</h4>
 
 <% @project.tasks.each do |task| %> 
+  
   <% if task.persisted?  %>
     <div class = "card mb-3">
       <div class = "card-body">
-
         <div class  = " d-flex justify-content-between" >
-
-          <h5 class = 'card-title mb-2'>  
-            <span> <%= task.name %> </span>
-          </h5>
-
-          <span class = "btn btn-<%= task.badge_color %> btn-sm"> 
-            <small> <%= task.status %> </small>
-          </span>
-
+        <span class = "btn btn-<%= task.badge_color %>"> 
+        <small> <%= task.status %> </small></span>
           <div>
-           <%= link_to 'Edit', edit_project_task_path(task.project, task), class: 'btn btn-primary btn-sm' %>
-           
+           <%= link_to 'Edit', edit_project_task_path(task.project, task), class: 'btn btn-light btn-sm' %>
            <%= link_to 'Destroy', [task.project, task], method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-sm' %>
            </div>
-
         </div>
+
+        <h5 class = 'card-title mb-2'>  
+        <span> <%= task.name %> </span>
+
+        </h5>
 
         <p><%= task.description %></p>
        </div>

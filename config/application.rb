@@ -12,7 +12,7 @@ module SimplePm
     config.load_defaults 6.1
 
     config.assets.initialize_on_precompile = false
-
+    config.secret_key = '--secret key--'
     # Configuration for the application, engines, and railties goes here.
     #
     # These settings can be overridden in specific environments using the files

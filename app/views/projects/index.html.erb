@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang = "en">
 <body background = "projects/cherrycity.gif"> 
+<%= button_to "Logout", destroy_user_session_path, method: :delete  %>
 <div class = "card">
     <div class = "card-body">
         <h2 class = 'card-title d-flex justify-content-between mb-4'>
@@ -12,16 +13,20 @@
           <%= link_to project, class: 'text-decoration-none' do %>
           <div class = "card project-card mb-3" >
             <div class = "card-body">
-            <div class = "mb-3">
-              <span class = "btn btn-<%= project.badge_color %>"> 
-                <small> <%= project.status %> </small>
+            <div class  = " d-flex justify-content-between" >
+            <h5 class = 'card-title text-dark'><b> <%= project.name %></b> </h5>
+
+            <span class = 'text-primary'><%= project.percent_complete %>% complete
+            (<%= project.total_complete %>/ <%= project.total_tasks %> tasks )
+              <span class = "btn btn-<%= project.badge_color %> btn-sm"> 
+                <small> <%= project.status %> </small> 
+
+                </span>
+              
               </span>
-              <span class = 'text-primary'><%= project.percent_complete %>% complete
-              (<%= project.total_complete %>/ <%= project.total_tasks %> tasks)
-              </span>
+              
             </div>
-              <h5 class = 'card-title text-dark'><b> <%= project.name %></b> </h5>
-              <p class = 'text-secondary'> <%= project.description %> </p>
+            <p class = 'text-secondary'> <%= project.description %> </p>
             </div>
           </div>
         <% end %>

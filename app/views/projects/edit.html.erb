@@ -1,11 +1,11 @@
 <%= link_to 'Back', @project, class: 'btn btn-secondary mb-3' %>
-
+<%= button_to "Logout", destroy_user_session_path, method: :delete  %>
 <div class = "card">
     <div class = "card-body">
         <h2 class = 'card-title mb-4'>
-          <span> Editing Task</span>
+          <span> Editing Project</span>
         </h2>  
-        <%= render 'form' %>
+        <%= render 'form', project: @project %>
     </div>
 </div>
        

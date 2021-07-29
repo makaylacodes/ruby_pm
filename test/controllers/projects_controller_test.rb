@@ -38,7 +38,7 @@ class ProjectsControllerTest < ActionDispatch::IntegrationTest
     assert_redirected_to project_url(@project)
   end
 
-  test "should delete project" do
+  test "should destroy project" do
     assert_difference('Project.count', -1) do
       delete project_url(@project)
     end

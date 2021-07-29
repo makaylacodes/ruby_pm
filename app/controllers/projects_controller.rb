@@ -1,10 +1,15 @@
 class ProjectsController < ApplicationController
   before_action:authenticate_user!
-  before_action :set_project, only: %i[ edit update delete ]
+  before_action :set_project, only: %i[ show edit update destroy ]
 
   # GET /projects or /projects.json
   def index
     @projects = current_user.projects
+  end
+
+  # GET /projects/1 or /projects/1.json
+  def show
+    @task = @project.tasks.build
   end
 
   #  GET /projects/new
@@ -45,10 +50,10 @@ class ProjectsController < ApplicationController
   end
 
   # DELETE /projects/1 or /projects/1.json
-  def delete
-    @project.delete
+  def destroy
+    @project.destroy
     respond_to do |format|
-      format.html { redirect_to projects_url, notice: "Project was successfully deleted." }
+      format.html { redirect_to projects_url, notice: "Project was successfully destroyed." }
       format.json { head :no_content }
     end
   end

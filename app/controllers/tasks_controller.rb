@@ -1,7 +1,7 @@
 class TasksController < ApplicationController
   before_action :authenticate_user!
   before_action :set_project
-  before_action :set_task, only: [:show, :edit, :update, :destroy]
+  before_action :set_task, only: [:edit, :update, :delete]
 
   # GET projects/1/tasks
   def index
@@ -42,8 +42,8 @@ class TasksController < ApplicationController
   end
 
   # DELETE projects/1/tasks/1
-  def destroy
-    @task.destroy
+  def delete
+    @task.delete
 
     redirect_to @project
   end

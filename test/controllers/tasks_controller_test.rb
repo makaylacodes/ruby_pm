@@ -39,9 +39,9 @@ class TasksControllerTest < ActionController::TestCase
     assert_redirected_to project_task_path(@project, Task.last)
   end
 
-  test "should destroy task" do
+  test "should delete task" do
     assert_difference('Task.count', -1) do
-      delete :destroy, params: { project_id: @project, id: @task }
+      delete :delete, params: { project_id: @project, id: @task }
     end
 
     assert_redirected_to project_tasks_path(@project)

@@ -1,15 +1,11 @@
-<div class = 'buttons d-flex justify-content-between mb-4'>
-<%= link_to 'Back', @project, class: 'btn btn-light mb-3' %>
-<%= button_to "Logout", destroy_user_session_path, method: :delete  %>
-</div>
-
+<%= link_to 'Back', @project, class: 'btn btn-secondary mb-3' %>
 
 <div class = "card">
     <div class = "card-body">
         <h2 class = 'card-title mb-4'>
-          <span> Editing Project</span>
+          <span> Editing Task</span>
         </h2>  
-        <%= render 'form', project: @project %>
+        <%= render 'form' %>
     </div>
 </div>
        

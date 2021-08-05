@@ -1,18 +1,10 @@
 body{
 
-    background-image: url(cherrycity.gif);
+    background-color: #CDC3E6 ;
 }
 .project-card{
     transition: background-color 0.5s ease;
     &:hover{
-        background-color: #dbcdcd ;
+        background-color: #d3d3d3 ;
     }
-    
-
 }
-
-.card{
-    background-color: #f8dada;
-    
-}
-

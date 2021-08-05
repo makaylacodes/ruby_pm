@@ -1,8 +1,5 @@
 
-<div class = 'buttons d-flex justify-content-between mb-4'>
 <%= link_to 'Back', projects_path, class: 'btn btn-light mb-6' %>
-<%= button_to "Logout", destroy_user_session_path, method: :delete  %>
-</div>
 
 <div class = "card">
   <div class = "card-body">
@@ -51,21 +48,18 @@
     <div class = "card mb-3">
       <div class = "card-body">
         <div class  = " d-flex justify-content-between" >
-        <h5 class = 'card-title mb-2'>  
-        <span> <%= task.name %> 
-        </span>
-        
-        <span class = "btn btn-<%= task.badge_color %> btn-sm"> 
+        <span class = "btn btn-<%= task.badge_color %>"> 
         <small> <%= task.status %> </small></span>
-        </h5>
           <div>
            <%= link_to 'Edit', edit_project_task_path(task.project, task), class: 'btn btn-light btn-sm' %>
            <%= link_to 'Destroy', [task.project, task], method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-sm' %>
            </div>
-           
         </div>
 
-        
+        <h5 class = 'card-title mb-2'>  
+        <span> <%= task.name %> </span>
+
+        </h5>
 
         <p><%= task.description %></p>
        </div>
